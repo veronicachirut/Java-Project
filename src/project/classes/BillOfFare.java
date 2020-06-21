@@ -37,7 +37,7 @@ public class BillOfFare {
         System.out.println("DRINKS:");
         for (Drink drink: drinks) {
             System.out.println(drink.getProductName());
-            System.out.println("Category: " + drink.getCategory() + ". Is sugary? " + drink.isSugary() + ". Is sprituous? " + drink.isSprituous());
+            System.out.println("Category: " + drink.getCategory() + ". Is sugary? " + drink.isSugary() + ". Is sprituous? " + drink.isSpirituous());
         }
         System.out.println("PRICE: " + priceMenu + "\n");
     }

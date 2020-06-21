@@ -6,6 +6,10 @@ import java.util.List;
 public class Chef extends Employee {
     public List<Order> foods = new ArrayList<>();
 
+    public Chef(int chefId, String name, int age, String hireDate, int salary) {
+        super(chefId, name, age, hireDate, salary);
+    }
+
     public Chef(String name, int age, String hireDate, int salary) {
         super(name, age, hireDate, salary);
     }
@@ -15,10 +19,10 @@ public class Chef extends Employee {
         System.out.println(this.name + " is now preparing " + order);
     }
 
-    public Chef(String name, int age, String hireDate, int salary, List<Order> foods) {
-        super(name, age, hireDate, salary);
-        this.foods = foods;
-    }
+//    public Chef(String name, int age, String hireDate, int salary, List<Order> foods) {
+//        super(name, age, hireDate, salary);
+//        this.foods = foods;
+//    }
 
     protected void chefInfo() {
         super.employeeInfo();
@@ -33,4 +37,5 @@ public class Chef extends Employee {
     public void printEmployeePosition() {
         System.out.println(this.name + "is a chef");
     }
+
 }

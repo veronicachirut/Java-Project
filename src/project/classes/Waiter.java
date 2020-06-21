@@ -11,13 +11,12 @@ public class Waiter extends Employee {
 
     private List<Order> orders = new ArrayList<>();
 
-    public Waiter(String name, int age, String hireDate, int salary) {
-        super(name, age, hireDate, salary);
+    public Waiter(int waiterId, String name, int age, String hireDate, int salary) {
+        super(waiterId, name, age, hireDate, salary);
     }
 
-    public Waiter(String name, int age, String hireDate, int salary, List<Order> orders) {
+    public Waiter(String name, int age, String hireDate, int salary) {
         super(name, age, hireDate, salary);
-        this.orders = orders;
     }
 
     public void addOrderToDeliver(Order order) {

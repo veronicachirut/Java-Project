@@ -1,10 +1,19 @@
 package project.classes;
 
 public abstract class Employee {
+    private int employeeId;
     protected String name;
     private int age;
     private final String hireDate;
     private int salary;
+
+    public Employee(int employeeId, String name, int age, String hireDate, int salary) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.age = age;
+        this.hireDate = hireDate;
+        this.salary = salary;
+    }
 
     public Employee(String name, int age, String hireDate, int salary) {
         this.name = name;
@@ -28,6 +37,10 @@ public abstract class Employee {
         System.out.println("Hired at " + yearsOld + " years old");
     }
 
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
     public String getName() {
         return name;
     }
@@ -42,6 +55,14 @@ public abstract class Employee {
 
     public int getSalary() {
         return salary;
+    }
+
+    @Override
+    public String toString() {
+        return " Name: " + name +
+                ", Age: " + getAge() +
+                ", Hire date: " + getHireDate() +
+                ", Salary: " + getSalary();
     }
 
     public abstract void printEmployeePosition();

@@ -1,12 +1,13 @@
-package project.classes;
+package project.service;
+import project.classes.*;
 
 import java.util.*;
 
-public class Service {
+public class ServicePart1And2 {
 
     Restaurant restaurant;
 
-    public Service() {
+    public ServicePart1And2() {
         this.restaurant = new Restaurant();
     }
 
@@ -132,11 +133,10 @@ public class Service {
 
                     List<Order> foods = null;
 
-                    Chef newChef = new Chef(chefName, age, hireDate, salary, foods);
+                    Chef newChef = new Chef(chefName, age, hireDate, salary);
                     restaurant.addChef(newChef);
                     System.out.println("Chef added successfully\n");
 
-                    break;
 
                 case "erase chef":
                     System.out.println("Type the name of the chef you want to erase: ");
@@ -156,23 +156,23 @@ public class Service {
 
                     System.out.println("Waiter name: ");
                     String waiterName ="";
-                    chefName = input.nextLine();
+                    waiterName = input.nextLine();
 
                     System.out.println("Waiter age: ");
                     int waiterAge = 0;
-                    age = Integer.parseInt(input.nextLine());
+                    waiterAge = Integer.parseInt(input.nextLine());
 
                     System.out.println("Waiter hire date: ");
                     String waiterHireDate = "";
-                    hireDate = input.nextLine();
+                    waiterHireDate = input.nextLine();
 
                     System.out.println("Waiter salary: ");
                     int waiterSalary = 0;
-                    salary = Integer.parseInt(input.nextLine());
+                    waiterSalary = Integer.parseInt(input.nextLine());
 
                     List<Order> ordersToDeliver = null;
 
-                    Waiter newWaiter = new Waiter(chefName, age, hireDate, salary, ordersToDeliver);
+                    Waiter newWaiter = new Waiter(waiterName, waiterAge, waiterHireDate, waiterSalary);
                     restaurant.addWaiter(newWaiter);
                     System.out.println("Waiter added successfully\n");
 
@@ -201,24 +201,23 @@ public class Service {
                 case "add order":
                     System.out.println("You are now adding a new order...");
 
-                    System.out.println("Order ID: ");
-                    int id = 0;
-                    id = Integer.parseInt(input.nextLine());
-
-                    List<String> newOrders = new ArrayList<>();
                     System.out.println("What would you like to order?");
-                    String newOrd = "";
-                    newOrd = input.nextLine();
-                    String[] orders = newOrd.split(", ");
-                    for (String order : orders) {
-                        newOrders.add(order);
-                    }
+                    String newOrders = "";
+                    newOrders = input.nextLine();
 
                     System.out.println("Order price: ");
                     int price = 0;
                     price = Integer.parseInt(input.nextLine());
 
-                    Order order = new Order(id, price, newOrders);
+                    System.out.println("Prepared by: ");
+                    int chefId = 0;
+                    chefId = Integer.parseInt(input.nextLine());
+
+                    System.out.println("Delivered by: ");
+                    int waiterId = 0;
+                    waiterId = Integer.parseInt(input.nextLine());
+
+                    Order order = new Order(newOrders, price, chefId, waiterId);
                     restaurant.addOrder(order);
 
                     break;

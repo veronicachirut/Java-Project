@@ -82,7 +82,7 @@ public class WriteRepository {
                     String name = drink.getProductName();
                     String category = drink.getCategory();
                     boolean isSugary = drink.isSugary();
-                    boolean isSprituous = drink.isSprituous();
+                    boolean isSprituous = drink.isSpirituous();
                     newRow.append(name).append(", ")
                             .append(category).append(", ")
                             .append(isSugary).append(", ")
